@@ -77,23 +77,40 @@ h1 {
 
 /* 📱 Móviles: apila todo */
 @media (max-width: 600px) {
+/* Estilos específicos para el input date */
     .box-style, .grid-div {
-        grid-template-columns: 1fr;
-        font-size: 1rem;
-        text-align: center;
+        grid-template-columns: 1fr ;
+        font-size: 1.1rem;
     }
-
-    .input, .date-selector, .btn-add, .red {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .date-selector {
-    font-size: 16px;
-    padding: 5px;
-    border-radius: 6px;
+.date-selector {
+    -webkit-appearance: none; /* Elimina estilos nativos en iOS/Safari */
+    appearance: none; /* Elimina estilos nativos en otros navegadores */
+    border-radius: 5px;
+    background-color: #757d8f;
+    color: var(--text-color);
+    font-weight: bold;
     border: solid 0.5px rgb(48, 44, 44);
+    font-family: inherit; /* Usa la misma fuente que el resto */
+}
+
+/* Estilo para el icono del calendario (en navegadores que lo permiten) */
+.date-selector::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Invierte el color del icono para mejor contraste */
+    padding: 5px;
+    cursor: pointer;
+}
+
+/* Media query para móviles - ajustes específicos */
+@media (max-width: 600px) {
+    .date-selector {
+        font-size: 16px; /* Tamaño mínimo para evitar zoom en iOS */ /* Más espacio para mejor tacto *//* Tamaño táctil mínimo recomendado */
+    }
     
+    /* Fuerza el mismo estilo en todos los navegadores móviles */
+    input[type="date"] {
+        display: block;
+        -webkit-appearance: none;
+    }
 }
 }
 

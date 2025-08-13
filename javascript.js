@@ -17,10 +17,10 @@ function renderTodolist(){
         const html = `
         
         <div><li>${name}</li></div>
-        <div>${dueDate} </div>
+        <div>${dueDate}</div>
         <button class="red" onclick="
         storetodo.splice(${i}, 1);
-        renderTodolist();" >Delete</button>`;
+        renderTodolist();" >Borrar🗑️</button>`;
         storeHTML += html;
     }
     
