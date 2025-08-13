@@ -87,12 +87,20 @@ h1 {
         width: 100%;
         box-sizing: border-box;
     }
+
+    .date-selector {
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 6px;
+    border: solid 0.5px rgb(48, 44, 44);
+    
+}
 }
 
 /* 💻 Tablets: 2 columnas */
 @media (min-width: 601px) and (max-width: 900px) {
     .box-style, .grid-div {
-        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr ;
         font-size: 1.1rem;
     }
 }
