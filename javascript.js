@@ -8,18 +8,16 @@ renderTodolist();
 function renderTodolist(){
     let storeHTML = '';
 
-    for(let i = 0; i < storetodo.length; i++){
+    for(let i = 0; i < storetodo.length; i++ ){
         const {name, dueDate} = storetodo[i];
         const html = `
-        <div class="todo-item">
             <div><li>${name}</li></div>
             <div>${dueDate}</div>
             <button class="red" onclick="
                 storetodo.splice(${i}, 1);
-                saveTodos(); // <-- Añade esta línea
+                saveTodos();  // ¡Esta línea es crucial!
                 renderTodolist();
-            ">Borrar🗑️</button>
-        </div>`;
+            ">Borrar🗑️</button>`;
         storeHTML += html;
     }
     
@@ -38,9 +36,8 @@ function addTodo(){
     const dateInputElement = document.querySelector('.js-due-date-input');
     const dueDate = dateInputElement.value;
 
-    // Validación para no añadir tareas vacías
-    if(!nametodo) {
-        alert('Por favor ingresa una tarea válida');
+    if (!nametodo) {
+        alert('⚠️ Por favor ingresa una tarea válida');
         return;
     }
 
@@ -53,4 +50,3 @@ function addTodo(){
     saveTodos();
     renderTodolist();
 }
-
