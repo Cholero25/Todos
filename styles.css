@@ -1,0 +1,107 @@
+:root {
+    --primary-gradient: linear-gradient(135deg, #0a192f, #172a45, #303f60);
+    --btn-add-color: rgb(85, 173, 97);
+    --btn-delete-color: rgb(196, 94, 76);
+    --text-color: whitesmoke;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--primary-gradient);
+    color: var(--text-color);
+}
+
+.input,.btn-add,.red{
+    padding: 0.8rem;
+    border: solid 0.5px rgb(48, 44, 44);
+}
+.date-selector{
+   padding: 0.7rem; 
+}
+
+.btn-add{
+    background-color: var(--btn-add-color);
+}
+.red{
+     background-color:var(--btn-delete-color);
+}
+.date-selector{
+background-color: #757d8f;
+}
+
+.btn-add,.red,.date-selector{
+    color:var(--text-colot);
+    font-weight:bold;
+}
+
+h1{
+    color:var(--text-colot);
+    text-decoration: underline;
+}
+.box-style,.grid-div{  
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.4rem;
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+      padding: 1rem 0px;
+      gap: 5px;
+      align-items: center;}
+.img-todo{
+    max-width: 150px;
+    border-radius: 10px;
+    border: solid 20px rgb(240, 220, 220);
+}
+
+
+.red{
+background-color:var(--btn-delete-color);
+}
+.hippo-text{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5rem;
+}
+
+
+/*
+.Azul{
+    background-color: rgb(92, 92, 186);
+     padding: 0.5rem;
+}
+.Amarillo{
+    background-color: rgb(175, 175, 105);
+     padding: 0.5rem;
+}
+.Rojo{
+    background-color: rgb(207, 132, 132);
+     padding: 0.5rem;
+}
+
+
+.Card-Amarillo{
+    background-color: rgb(175, 175, 105);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.Card-Rojo{
+    background-color: rgb(207, 132, 132);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.Card-Azul{
+    background-color: rgb(92, 92, 186);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+
+.Cards{
+    display: flex;
+    gap: 1rem;
+    padding: 2rem;
+}*/
