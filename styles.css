@@ -14,94 +14,92 @@ body {
     min-height: 100vh;
     background: var(--primary-gradient);
     color: var(--text-color);
+    padding: 1rem;
 }
 
-.input,.btn-add,.red{
+.input, .btn-add, .red {
     padding: 0.8rem;
     border: solid 0.5px rgb(48, 44, 44);
-}
-.date-selector{
-   padding: 0.7rem; 
+    border-radius: 5px;
 }
 
-.btn-add{
+.date-selector {
+   padding: 0.7rem; 
+   border-radius: 5px;
+}
+
+.btn-add {
     background-color: var(--btn-add-color);
 }
-.red{
-     background-color:var(--btn-delete-color);
-}
-.date-selector{
-background-color: #757d8f;
+
+.red {
+    background-color: var(--btn-delete-color);
 }
 
-.btn-add,.red,.date-selector{
-    color:var(--text-colot);
-    font-weight:bold;
+.date-selector {
+    background-color: #757d8f;
 }
 
-h1{
-    color:var(--text-colot);
+.btn-add, .red, .date-selector {
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+h1 {
+    color: var(--text-color);
     text-decoration: underline;
+    text-align: center;
 }
-.box-style,.grid-div{  
+
+.box-style, .grid-div {  
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     display: grid;
     grid-template-columns: 200px 150px 100px;
-      padding: 1rem 0px;
-      gap: 5px;
-      align-items: center;}
-.img-todo{
+    padding: 1rem 0;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.img-todo {
     max-width: 150px;
     border-radius: 10px;
-    border: solid 20px rgb(240, 220, 220);
+    border: solid 5px rgb(240, 220, 220);
 }
 
-
-.red{
-background-color:var(--btn-delete-color);
-}
-.hippo-text{
+.hippo-text {
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1.5rem;
 }
 
+/* 📱 Móviles: apila todo */
+@media (max-width: 600px) {
+    .box-style, .grid-div {
+        grid-template-columns: 1fr;
+        font-size: 1rem;
+        text-align: center;
+    }
 
-/*
-.Azul{
-    background-color: rgb(92, 92, 186);
-     padding: 0.5rem;
-}
-.Amarillo{
-    background-color: rgb(175, 175, 105);
-     padding: 0.5rem;
-}
-.Rojo{
-    background-color: rgb(207, 132, 132);
-     padding: 0.5rem;
-}
-
-
-.Card-Amarillo{
-    background-color: rgb(175, 175, 105);
-    padding: 1rem;
-    border-radius: 1rem;
-}
-.Card-Rojo{
-    background-color: rgb(207, 132, 132);
-    padding: 1rem;
-    border-radius: 1rem;
-}
-.Card-Azul{
-    background-color: rgb(92, 92, 186);
-    padding: 1rem;
-    border-radius: 1rem;
+    .input, .date-selector, .btn-add, .red {
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
 
+/* 💻 Tablets: 2 columnas */
+@media (min-width: 601px) and (max-width: 900px) {
+    .box-style, .grid-div {
+        grid-template-columns: 1fr 1fr;
+        font-size: 1.1rem;
+    }
+}
 
-.Cards{
-    display: flex;
-    gap: 1rem;
-    padding: 2rem;
-}*/
+/* 🖥 Escritorio: mantiene 3 columnas */
+@media (min-width: 901px) {
+    .box-style, .grid-div {
+        grid-template-columns: 200px 150px 100px;
+    }
+}
