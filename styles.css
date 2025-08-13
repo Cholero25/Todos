@@ -3,8 +3,12 @@
     --btn-add-color: rgb(85, 173, 97);
     --btn-delete-color: rgb(196, 94, 76);
     --text-color: whitesmoke;
+    --border-color: rgb(48, 44, 44);
+    --input-bg-color: #757d8f;
+    --img-border-color: rgb(240, 220, 220);
 }
 
+/* Estilos base */
 body {
     margin: 0;
     display: flex;
@@ -17,41 +21,38 @@ body {
     padding: 1rem;
 }
 
-.input, .btn-add, .red {
+/* Input date - Estilos base para todos los dispositivos */
+.date-selector {
+    -webkit-appearance: none;
+    appearance: none;
     padding: 0.8rem;
-    border: solid 0.5px rgb(48, 44, 44);
     border-radius: 5px;
-}
-
-.date-selector {
-   padding: 0.7rem; 
-   border-radius: 5px;
-}
-
-.btn-add {
-    background-color: var(--btn-add-color);
-}
-
-.red {
-    background-color: var(--btn-delete-color);
-}
-
-.date-selector {
-    background-color: #757d8f;
-}
-
-.btn-add, .red, .date-selector {
+    background-color: var(--input-bg-color);
     color: var(--text-color);
     font-weight: bold;
+    border: solid 0.5px var(--border-color);
+    font-family: inherit;
+    min-height: 44px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-h1 {
-    color: var(--text-color);
-    text-decoration: underline;
-    text-align: center;
+/* Icono del calendario */
+.date-selector::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    padding: 4px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s;
 }
 
-.box-style, .grid-div {  
+.date-selector::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+}
+
+/* Layout principal */
+.box-style, .grid-div {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.2rem;
     display: grid;
@@ -63,75 +64,73 @@ h1 {
     max-width: 500px;
 }
 
+/* Estilos para móviles */
+@media (max-width: 600px) {
+    .box-style, .grid-div {
+        grid-template-columns: 1fr;
+        font-size: 1.1rem;
+    }
+    
+    .date-selector {
+        padding: 12px;
+    }
+    
+    /* Placeholder para móviles */
+    input[type="date"]:not(:focus):empty:before {
+        content: attr(placeholder);
+        color: var(--text-color);
+        opacity: 0.7;
+    }
+}
+
+/* Estilos para tablets */
+@media (min-width: 601px) and (max-width: 900px) {
+    .box-style, .grid-div {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Estilos para escritorio */
+@media (min-width: 901px) {
+    .box-style, .grid-div {
+        grid-template-columns: 200px 150px 100px;
+    }
+}
+
+/* El resto de tus estilos permanecen igual */
+.input, .btn-add, .red {
+    padding: 0.8rem;
+    border: solid 0.5px var(--border-color);
+    border-radius: 5px;
+}
+
+.btn-add {
+    background-color: var(--btn-add-color);
+}
+
+.red {
+    background-color: var(--btn-delete-color);
+}
+
+.btn-add, .red {
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+h1 {
+    color: var(--text-color);
+    text-decoration: underline;
+    text-align: center;
+}
+
 .img-todo {
     max-width: 150px;
     border-radius: 10px;
-    border: solid 5px rgb(240, 220, 220);
+    border: solid 5px var(--img-border-color);
 }
 
 .hippo-text {
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1.5rem;
-}
-/* Estilos específicos para el input date */
-    .box-style, .grid-div {
-        grid-template-columns: 1fr ;
-        font-size: 1.1rem;
-    }
-
-
-/* 📱 Móviles: apila todo */
-@media (max-width: 600px) {
-/* Estilos específicos para el input date */
-    .box-style, .grid-div {
-        grid-template-columns: 1fr ;
-        font-size: 1.1rem;
-    }
-.date-selector {
-    -webkit-appearance: none; /* Elimina estilos nativos en iOS/Safari */
-    appearance: none; /* Elimina estilos nativos en otros navegadores */
-    border-radius: 5px;
-    background-color: #757d8f;
-    color: var(--text-color);
-    font-weight: bold;
-    border: solid 0.5px rgb(48, 44, 44);
-    font-family: inherit; /* Usa la misma fuente que el resto */
-}
-
-/* Estilo para el icono del calendario (en navegadores que lo permiten) */
-.date-selector::-webkit-calendar-picker-indicator {
-    filter: invert(1); /* Invierte el color del icono para mejor contraste */
-    padding: 5px;
-    cursor: pointer;
-}
-
-/* Media query para móviles - ajustes específicos */
-@media (max-width: 600px) {
-    .date-selector {
-        font-size: 16px;
-        min-height: 44px /* Tamaño mínimo para evitar zoom en iOS */ /* Más espacio para mejor tacto *//* Tamaño táctil mínimo recomendado */
-    }
-    
-    /* Fuerza el mismo estilo en todos los navegadores móviles */
-    input[type="date"] {
-        display: block;
-        -webkit-appearance: none;
-    }
-}
-}
-
-/* 💻 Tablets: 2 columnas */
-@media (min-width: 601px) and (max-width: 900px) {
-    .box-style, .grid-div {
-        grid-template-rows: 1fr ;
-        font-size: 1.1rem;
-    }
-}
-
-/* 🖥 Escritorio: mantiene 3 columnas */
-@media (min-width: 901px) {
-    .box-style, .grid-div {
-        grid-template-columns: 200px 150px 100px;
-    }
 }
