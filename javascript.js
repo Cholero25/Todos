@@ -24,7 +24,7 @@ function renderTodolist(){
     document.querySelector('.js-todo').innerHTML = storeHTML;
 }
 
-// Guardar en localStorage
+// Guardar en localStoragegit 
 function saveTodos() {
     localStorage.setItem('storetodo', JSON.stringify(storetodo));
 }
